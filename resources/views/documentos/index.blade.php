@@ -3,22 +3,25 @@
 @section('content')
 <div class="container">
     @include('documentos._session')
-    <div class="card">
-    <div class="card-header">
-            Listado de documentos
-            <a href="{{route('documentos.create')}}"
-                class="btn btn-sm btn-primary">
-                <i class="fa-solid fa-plus"></i>
-             </a>
-    </div>
+
+    <div class="card bg-white shadow rounded py-3 px-4">
+
+            <div class="d-flex justify-content-between">
+                    <h4>Listado de documentos</h4>
+                    <a href="{{route('documentos.create')}}"
+                        class="btn btn-success ">
+                        <i class="fa-solid fa-plus"></i>
+                        Agregar
+                    </a>
+            </div>
     <div class="body">
             <table class="table">
                <thead>
                     <tr>
-                        <th>id</th>
-                        <th>titulo</th>
-                        <th>autor</th>
-                        <th>acciones</th>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Acciones</th>
                     </tr>
                </thead>
                <tbody>
@@ -49,9 +52,9 @@
                </tbody>
             </table>
     </div>
-    <div class="card-footer">
+    {{-- <div class="card-footer"> --}}
         {{ $documentos->links() }}
-    </div>
+    {{-- </div> --}}
     </div>
 </div>
 @endsection

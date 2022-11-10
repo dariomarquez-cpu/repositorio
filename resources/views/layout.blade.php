@@ -18,7 +18,7 @@
             <header>
                 <!-- Barra de navegacion -->
                 @include('_nav')
-                <hr>
+              
             </header>
 
             <main class="py-3">

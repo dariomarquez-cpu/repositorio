@@ -1,8 +1,8 @@
-<nav class="navbar navbar-light ">
+<nav class="navbar navbar-dark bg-dark ">
     <div class="container-fluid">
-        <a class="nav-link" href="{{route('home')}}">
+        <a class="navbar-brand" href="{{route('home')}}">
             <img src="{{asset('imagenes/logo.jpg')}}" alt=""
-            width="30" height="30" class="d-inline-block align-text-center">
+            width="40" height="40" class="d-inline-block align-text-center">
             {{-- {{config('app.name')}} --}}
             Catalogo
         </a>
@@ -10,14 +10,14 @@
     <ul class="nav nav-pills">
         @guest
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">
+            <a class="nav-link text-white" href="{{ route('login') }}">
                 Login
             </a>
         </li>
         @endguest
         @auth
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('documentos.index') }}">
+                <a class="nav-link text-white" href="{{ route('documentos.index') }}">
                     Admin
                 </a>
             </li>
@@ -27,12 +27,12 @@
                 method="POST" >
                     @csrf
 
-                    <button type="submit" class="nav-link">Logout</button>
+                    <button type="submit" class="btn btn-outline-light">Logout</button>
                 </form>
             </li>
         @endauth
     </ul>
-
-</div>
+    </div>
 </nav>
+
 

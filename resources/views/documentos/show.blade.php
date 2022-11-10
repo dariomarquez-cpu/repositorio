@@ -29,9 +29,7 @@
                     <b>Descripción:</b>
                 </label>
                 <div class="col-sm-10">
-                    <textarea readonly class="form-control-plaintext" rows="2">
-                        {{$documento->descripcion}}
-                    </textarea>
+                    <input type="text" readonly class="form-control-plaintext" id="descripcion" value="{{$documento->descripcion}}">
                 </div>
             </div>
             <div class="mb-3 row">

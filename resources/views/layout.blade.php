@@ -10,6 +10,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         @livewireStyles
         <script src="https://kit.fontawesome.com/c6a6ebc6e3.js" crossorigin="anonymous"></script>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
         <div class="d-flex flex-column justify-content-between"
@@ -18,7 +23,7 @@
             <header>
                 <!-- Barra de navegacion -->
                 @include('_nav')
-              
+
             </header>
 
             <main class="py-3">

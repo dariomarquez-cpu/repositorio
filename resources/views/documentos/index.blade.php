@@ -3,9 +3,7 @@
 @section('content')
 <div class="container">
     @include('documentos._session')
-
     <div class="card bg-white shadow rounded py-3 px-4">
-
             <div class="d-flex justify-content-between">
                     <h4>Listado de documentos</h4>
                     <a href="{{route('documentos.create')}}"
@@ -14,7 +12,7 @@
                         Agregar
                     </a>
             </div>
-    <div class="body">
+        <div class="body">
             <table class="table">
                <thead>
                     <tr>
@@ -51,10 +49,10 @@
 
                </tbody>
             </table>
-    </div>
-    {{-- <div class="card-footer"> --}}
+        </div>
+
         {{ $documentos->links() }}
-    {{-- </div> --}}
+
     </div>
 </div>
 @endsection

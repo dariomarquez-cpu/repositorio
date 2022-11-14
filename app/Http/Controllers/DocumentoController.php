@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Documento;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class DocumentoController extends Controller
 {
     //Nos devuelve el catalogo de los documentos
     public function home (){
         $documentos = Documento::paginate(10);
+        $usuariosCantidad = DB::table('users')->count();
 
-        return view('home',compact('documentos'));
+        return view('home',compact('documentos','usuariosCantidad'));
     }
 
 
@@ -20,11 +22,13 @@ class DocumentoController extends Controller
     //Listado
     public function index(){
         $documentos = Documento::paginate(10);
+
         return view('documentos.index',compact('documentos'));
     }
     //Creacion
     public function create(){
         $documento = new Documento();
+        
         return view('documentos.create',compact('documento'));
     }
     //Edicion
@@ -49,7 +53,7 @@ class DocumentoController extends Controller
             'imagen' => 'required|mimes:jpg,jpeg,png,bmp',
             'titulo' => 'required|max:255',
             'autor' => 'required|max:255',
-            'descripcion' => '',
+            'descripcion' => 'required',
             'archivo' => 'required|mimes:pdf'
         ]);
         //Creamos un documento nuevo para luego asignar los valores

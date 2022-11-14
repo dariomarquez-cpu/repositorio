@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\UrlGenerator;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,7 +32,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       
+        view()->composer('*', function ($view) {
+            $usuariosCantidad = DB::table('users')->count();
+            $view->with('usuariosCantidad',$usuariosCantidad);
+        });
         Paginator::useBootstrap();
     }
     // public function boot(UrlGenerator $url)
